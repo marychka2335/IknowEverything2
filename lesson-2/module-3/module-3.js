@@ -56,16 +56,18 @@
 // Якщо об'єкт salaries порожній, то результат має бути 0
 
 // const salaries = {
-//   Mango: 100,
-//   Poly: 160,
-//   Ajax: 1470,
+// //   Mango: 100,
+// //   Poly: 160,
+// //   Ajax: 1470,
 // };
 
 // let sum = 0;
 
-//? Answer
-
-//?
+// //? Answer
+// for (const salary of Object.values(salaries)) { 
+//     sum += salary;
+// }
+// //?
 
 // console.log(sum);
 
@@ -75,7 +77,14 @@
 // Очікуваний результат ({a: 1, b: 2, c: 3}, 'b', 'a') => {c: 3}
 
 //? Answer
-
+// function updateObject(obj, ...removeKeys) { 
+//     const newObj = { ...obj };
+//      for (const key of removeKeys) { 
+//          delete newObj[key]
+        
+//     }
+//     return newObj;
+//  }
 //?
 
 // console.log(updateObject({ a: 1, b: 2, c: 3 }, 'b', 'a')); // {c: 3}
@@ -94,7 +103,7 @@
 // };
 
 // ?Answer
-
+//  console.log(Object.entries(user))
 //?
 
 // changeObject(user);
@@ -109,9 +118,16 @@
 //   height: 300,
 //   title: 'My menu',
 // };
-
-//? Answer
-
+//  console.log(menu)
+// //? Answer
+// function multiplyNumeric(obj) { 
+//     for (const key in obj) {
+//         if (obj.hasOwnProperty(key) && typeof obj[key] === "number") {
+//             obj[key] *= 2
+//         }
+//     }
+//     return obj
+// }
 //?
 
 // console.log(multiplyNumeric(menu));
@@ -131,31 +147,42 @@
  */
 
 //? Answer
-
+function findBestEmployee(employees) { 
+    let bestEmployee = "";
+    let bestEmployeeTask = 0;
+   
+    for (const [ employee , task] of Object.entries(employees)) {
+        if (task > bestEmployeeTask) { 
+            bestEmployeeTask = task;
+            bestEmployee = employee;
+        }
+    }
+    return bestEmployee
+}
 // //?
 
-// console.log(
-//   findBestEmployee({
-//     ann: 29,
-//     david: 35,
-//     helen: 1,
-//     lorence: 99,
-//   })
-// ); // lorence
+console.log(
+  findBestEmployee({
+    ann: 129,
+    david: 35,
+    helen: 1,
+    lorence: 99,
+  })
+); // lorence
 
-// console.log(
-//   findBestEmployee({
-//     poly: 12,
-//     mango: 17,
-//     ajax: 4,
-//   })
-// ); // mango
+console.log(
+  findBestEmployee({
+    poly: 12,
+    mango: 17,
+    ajax: 4,
+  })
+); // mango
 
-// console.log(
-//   findBestEmployee({
-//     lux: 147,
-//     david: 21,
-//     kiwi: 19,
-//     chelsy: 38,
-//   })
-// ); // lux
+console.log(
+  findBestEmployee({
+    lux: 147,
+    david: 21,
+    kiwi: 19,
+    chelsy: 38,
+  })
+); // lux

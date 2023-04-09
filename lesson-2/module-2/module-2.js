@@ -3,11 +3,22 @@
 //Напиши функцію findSmallerNumber(numbers)
 //яка шукає найменше число в масиві.
 //Додай перевірку що функція отримує масив
+
 // const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
 
-//? Answer
+// function findSmallerNumber(arr) {
+//   if (!Array.isArray(arr)) {
+//     throw new Error("Аргументи повинні бути масивом!")
+//   }
+// let min = arr[0]
 
-//?
+//   for (const item of arr){
+//     if (item < min) {
+//      min = item
+//    }
+//   }
+//   return min
+// }
 
 // const smallestNumber = findSmallerNumber(numbers);
 // console.log(smallestNumber); // 2
@@ -18,7 +29,23 @@
 //аргументів і повертає їхнє середнє значення.
 //Додати перевірку, що аргументи це числа.
 
-// console.log(calculateAverage(10, 10, 20, 200)); // 60
+// const calculateAverage = function () {
+// let sum = 0
+// let counts = 0
+  
+//   for (argument of arguments) {
+//     if (typeof argument !== "number") {
+//       continue
+//     }
+//     sum += argument
+//     counts += 1
+//   }
+ 
+//   return sum / counts
+
+// }
+
+// console.log(calculateAverage(10, 10, 20, 200, "hello")); // 60
 
 //TODO:=========task-3=================
 const filmoteka = [
